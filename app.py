@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from pprint import pprint
 from openai import OpenAI
 from apscheduler.schedulers.background import BackgroundScheduler
-from Alta.API_alta_openaiFunc import fetch_lcc_from_openai
+from Alta.alta_openaiFunc import fetch_lcc_from_openai
 from Alta.alta_selenium_snowtotals import get_alta_snow_totals
 from Alta.alta_selenium_forecast import get_alta_forecast
 from Solitude.sol_openai_func import fetch_bcc_from_openai

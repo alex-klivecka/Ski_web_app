@@ -16,7 +16,7 @@ pprint(snow_totals)
 
 def get_and_tweet_roads():
     # Create an OpenAI client using your API key
-    client = OpenAI(api_key='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')
+    client = OpenAI(api_key='sk-')
     text = """this is for an art project. Please summarize, in a Tweet of no more than 280 characters, the traffic and 
     weather conditions depicted in pictures from traffic cameras along a road to the Alta ski resort.
     The road runs 3000 feet up a canyon. The URLs I feed you are pictures in order, from low elevation to high elevation.
