@@ -12,7 +12,7 @@ def get_alta_snow_totals():
     url = "https://www.alta.com/weather"  # Replace with the actual URL
 
     # Create a Chrome WebDriver instance
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(options=chrome_options)
 
     # Navigate to the URL
     driver.get(url)

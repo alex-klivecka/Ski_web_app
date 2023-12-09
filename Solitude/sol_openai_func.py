@@ -8,7 +8,7 @@ import os
 load_dotenv()  # take environment variables from .env.
 
 
-def fetch_lcc_from_openai():
+def fetch_bcc_from_openai():
   oapi_key = os.getenv('API_KEY')  
     # Create an OpenAI client using your API key
   client = OpenAI(api_key=oapi_key)
@@ -19,8 +19,6 @@ def fetch_lcc_from_openai():
   Your response should be about 300 characters.
   The language should be very business-like and straightforward, the tone somewhat dry.
   Do not describe what you are saying, just say it.
-  Note: When analyzing the image from [https://udottraffic.utah.gov/1_devices/aux17226.jpeg], treat it as a parking lot at '/SR-210 @ Alta/MP 12.16', focusing on its occupancy level. 
-  For [https://udottraffic.utah.gov/1_devices/aux16270.jpeg], remember to describe it as a road.
   Treat this as if you are providing a utility service. be descriptive.
   At night, do not comment on how full the parking lot is.
   do not put quotations around your response.
@@ -33,14 +31,13 @@ def fetch_lcc_from_openai():
         "content": [
           {"type": "text", "text": text},
           # The following are image URLs for the model to analyze
-          {"type": "image_url", "image_url": {"url": "https://udottraffic.utah.gov/1_devices/aux14604.jpeg"}},
-          {"type": "image_url", "image_url": {"url": "https://udottraffic.utah.gov/1_devices/aux16265.jpeg"}},
-          {"type": "image_url", "image_url": {"url": "https://udottraffic.utah.gov/1_devices/aux16267.jpeg"}},
-          {"type": "image_url", "image_url": {"url": "https://udottraffic.utah.gov/1_devices/aux16269.jpeg"}},
-          {"type": "image_url", "image_url": {"url": "https://udottraffic.utah.gov/1_devices/aux16270.jpeg"}},
-          {"type": "image_url", "image_url": {"url": "https://udottraffic.utah.gov/1_devices/aux17227.jpeg"}},
-          {"type": "image_url", "image_url": {"url": "https://udottraffic.utah.gov/1_devices/aux17228.jpeg"}},
-          {"type": "image_url", "image_url": {"url": "https://udottraffic.utah.gov/1_devices/aux17226.jpeg"}},
+          {"type": "image_url", "image_url": {"url": "https://udottraffic.utah.gov/1_devices/aux14605.jpeg"}},
+          {"type": "image_url", "image_url": {"url": "https://udottraffic.utah.gov/1_devices/aux16212.jpeg"}},
+          {"type": "image_url", "image_url": {"url": "https://udottraffic.utah.gov/1_devices/aux16213.jpeg"}},
+          {"type": "image_url", "image_url": {"url": "https://udottraffic.utah.gov/1_devices/aux16215.jpeg"}},
+          {"type": "image_url", "image_url": {"url": "https://udottraffic.utah.gov/1_devices/aux16216.jpeg"}},
+          {"type": "image_url", "image_url": {"url": "https://udottraffic.utah.gov/1_devices/aux18040.jpeg"}},
+          {"type": "image_url", "image_url": {"url": "http://udottraffic.utah.gov/1_devices/SR-190%20MP%2015%2095%20SL.gif"}},
         ],
       }
     ],
@@ -48,9 +45,13 @@ def fetch_lcc_from_openai():
   )
   response_json = response.model_dump_json()
   response_dict = json.loads(response_json)
-  gpt_response_lcc = response_dict['choices'][0]['message']['content']
+  gpt_response_bcc = response_dict['choices'][0]['message']['content']
 
-  return gpt_response_lcc
+  print(gpt_response_bcc)
+  return gpt_response_bcc
+
+fetch_bcc_from_openai()
+
 
 # gpt_repsonse_llc = fetch_data_from_openai()
 
