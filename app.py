@@ -16,7 +16,7 @@ def fetch_data():
     alta_snow_totals = get_alta_snow_totals()
 
 scheduler = BackgroundScheduler()
-scheduler.add_job(fetch_data, 'interval', minutes=10)
+scheduler.add_job(fetch_data, 'interval', minutes=1)
 scheduler.start()
 
 @app.route('/')

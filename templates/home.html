@@ -2,13 +2,20 @@
 <html>
 <head>
     <title>OpenAI Response</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div>
-        {{ alta_openai }}
+    <div class="info-block">
+        <h2 class="info-title">OpenAI Response</h2>
+        <p class="info-content">{{ alta_openai }}</p>
     </div>
-    <div>
-        {{ alta_snow_totals }}
+    <div class="info-block">
+        <h2 class="info-title">12 Hour Forecast</h2>
+        <p class="info-content">{{ alta_12hr }}</p>
+    </div>
+    <div class="info-block">
+        <h2 class="info-title">24 Hour Forecast</h2>
+        <p class="info-content">{{ alta_24hr }}</p>
     </div>
 </body>
 </html>
