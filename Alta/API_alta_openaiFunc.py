@@ -5,9 +5,10 @@ from openai import OpenAI
 
 def fetch_data_from_openai():
     # Create an OpenAI client using your API key
-  client = OpenAI(api_key='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')
+  client = OpenAI(api_key='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')
   text = """this is for an art project. Please summarize the traffic and 
   road conditions depicted in pictures from traffic cameras along a road to the Alta ski resort.
+  Do not list out the cameras, summarize the scene for a driver to get information about the conditions, traffic, and how the conditions chamnge from the bottom of the canyon to the top.
   The road runs feet up a canyon. The pictures in order, from low elevation to high elevation.
   Your response should be about 300 characters.
   The language should be very business-like and straightforward, the tone somewhat dry.
